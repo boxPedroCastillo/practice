@@ -1,0 +1,61 @@
+body{
+    background-color: red;
+}
+.card{
+    position: relative;
+    top: 25vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #fff;
+    width: 350px;
+    height: 380px;
+    border: solid black 3px;
+    border-radius: 7%;
+    overflow: hidden;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    background-image: url(../img/bg-pattern-card.svg);
+    background-size: cover;
+    width: 350px;
+    height: 150px;
+}
+
+.card__profile--img{
+    position: relative;
+    width: 95px;
+    width: 95px;
+    border-radius: 50%;
+    border: solid 5px white;
+    margin: 107.5px 0 0 125px;
+
+}
+
+
+.card__title{
+    color: blue;
+    text-align: center;
+}
+
+.card__title--age{
+     color:red;
+}
+
+.card__city{
+    text-align: center;
+}
+
+hr{
+    width: 300px;
+}
+
+.card_table{
+    color:Red;
+    margin: 0 auto;
+}
+
