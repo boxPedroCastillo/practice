@@ -1,6 +1,20 @@
-body{
-    background-color: red;
+
+:root{
+    --bgColor: hsl(185, 75%, 39%);
+    --fontDark: hsl(229, 23%, 23%);
+    --fontGray: hsl(227, 10%, 46%);
+    --neutralGray: hsl(0, 0%, 59%);
 }
+
+body{
+    background-color: var(--bgColor);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400px;
+    font-size:14px;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .card{
     position: relative;
     top: 25vh;
@@ -11,8 +25,6 @@ body{
     margin-right:auto;
     background-color: #fff;
     width: 350px;
-    height: 380px;
-    border: solid black 3px;
     border-radius: 7%;
     overflow: hidden;
 }
@@ -36,26 +48,93 @@ body{
 
 }
 
-
 .card__title{
-    color: blue;
+    color: var(--fontDark);
     text-align: center;
 }
 
 .card__title--age{
-     color:red;
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--neutralGray);
 }
 
 .card__city{
     text-align: center;
+    font-weight: 400px;
+    color: var(--neutralGray);
+    font-size: 16px;
+    margin-top:-10px;
 }
 
 hr{
-    width: 300px;
+    margin:25px auto 20px auto;
+    color: var(--neutralGray);
+
 }
 
 .card_table{
-    color:Red;
-    margin: 0 auto;
+    border-collapse: separate; 
+    margin: 20px 0 30px 0;
+
 }
 
+.card__statics{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--fontDark);
+    text-align: center;
+    padding-left: 40px;
+    padding-bottom:5px;
+}
+
+.card__paragraph{
+    text-align: center;
+    color: var(--neutralGray);
+    padding-left: 40px;
+    letter-spacing: .1em;
+}
+
+/* Background Images */
+
+.card__bgCircle .card__bgCircle--top,
+.card__bgCircle .card__bgCircle--bottom {
+    position: absolute;
+    animation: 2s circles forwards;
+    opacity:0;
+}
+
+.card__bgCircle--top{
+    top:-550px;
+    left: -200px;
+    transform: translate(-300px, -50px);
+}
+
+.card__bgCircle--bottom{
+    bottom: -650px;
+    right: -300px;
+    transform: translate(800px, 50px);
+}
+
+@keyframes circles {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card__bgCircle--top{
+        top:-100px;
+        transform: translate(-300px, -50px);
+    }
+    
+    .card__bgCircle--bottom{
+        bottom: 0px;
+        left: 200px
+    }
+  }
